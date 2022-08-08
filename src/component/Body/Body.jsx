@@ -5,7 +5,7 @@ import Register from '../Register/Register';
 
 const Body = () => {
   return (
-    <div>
+    <div className="bg-[#363636] pb-[4rem]">
       <Routes>
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />

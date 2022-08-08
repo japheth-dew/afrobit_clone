@@ -7,11 +7,11 @@ const Login = () => {
   return (
     <div className="flex flex-col items-center">
       <div
-        className="w-[80%] h-screen rounded-bl-full rounded-br-full bg-gradient-to-r from-[#EDD78F] via-[#EDD78F] to-[#FDBF4A]
+        className="md:w-[80%] w-[100%] h-screen rounded-bl-full rounded-br-full bg-gradient-to-r from-[#EDD78F] via-[#EDD78F] to-[#FDBF4A]
       py-[2.2rem]"
       >
         <div className="flex flex-col items-center text-[#666666] ">
-          <div className="bg-[#211F20] p-6 rounded-xl flex flex-col items-center gap-4 w-[35%] ">
+          <div className="bg-[#211F20] p-6 rounded-xl flex flex-col items-center gap-4 md:w-[35%] w-[70%]">
             <div className="flex gap-6 w-full">
               <div className="flex flex-col gap-[.5px] items-center">
                 <span className="text-[#FAC55B] ">Email</span>
