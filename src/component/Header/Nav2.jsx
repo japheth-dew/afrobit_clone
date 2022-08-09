@@ -1,8 +1,8 @@
 import React from "react";
 
-const Nav = () => {
+const Nav2 = () => {
   return (
-    <div className="flex md:gap-10 gap-3 font-[400] md:text-[18px] text-[14px] ">
+    <div className="flex flex-col gap-5 py-4 font-[400] text-[16px] h-[100%] ">
       <button>Trade</button>
       <button>Earn</button>
       <button>Invest</button>
@@ -13,4 +13,4 @@ const Nav = () => {
   );
 };
 
-export default Nav;
+export default Nav2;
