@@ -6,6 +6,17 @@
   box-sizing: border-box;
 }
 
+table {
+  /* border-collapse: collapse ; */
+}
+
+th:first-child{
+  border-radius: 5px;
+}
+th:last-child{
+  border-radius: 5px;
+}
+
 html, body{
   scroll-behavior: smooth;
   font-family: 'Inter', sans-serif;

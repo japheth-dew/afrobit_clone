@@ -6,7 +6,7 @@ import Trade from '../Trade/Trade';
 
 const Body = () => {
   return (
-    <div className="bg-[#363636] pb-[4rem] h-auto">
+    <div className="bg-[#363636]  h-auto">
       <Routes>
         <Route path="login" element={<Login />} />
         <Route path="register" element={<Register />} />
