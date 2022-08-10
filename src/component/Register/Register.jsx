@@ -9,7 +9,7 @@ const Register = () => {
       py-[2.2rem]"
       >
         <div className="flex flex-col items-center text-[#666666] ">
-          <div className="bg-[#211F20] p-6 rounded flex flex-col items-center gap-4 md:w-[35%] w-[70%]">
+          <div className="bg-[#211F20] p-6 rounded flex flex-col items-center gap-4 md:w-[70%] lg:w-[40%] w-[90%]">
             <div className="flex gap-6 w-full">
               <div className="flex flex-col gap-[.5px] items-center">
                 <span className="text-[#FAC55B] ">Email</span>
@@ -43,26 +43,26 @@ const Register = () => {
 
                 <div className="flex flex-col gap-1 w-full">
                   <label htmlFor="password">Your password</label>
-                  <div className="flex justify-between px-3 items-center w-full bg-[#363636] h-[49px]  rounded w-full">
+                  <div className="flex justify-between items-center w-full bg-[#363636] h-[49px]  rounded w-full">
                     <input
-                      className="h-[49px] bg-[#363636]"
+                      className="h-[49px] bg-[#363636] w-full border-none"
                       type="password"
                       name="password"
                     />
-                    <i className="relative ">
+                    <i className="relative mr-3">
                       <img src={eyes} alt="eyes" />
                     </i>
                   </div>
                 </div>
                 <div className="flex flex-col gap-1 w-full">
                   <label htmlFor="password">Confirm password</label>
-                  <div className="flex justify-between px-3 items-center w-full bg-[#363636] h-[49px]  rounded w-full">
+                  <div className="flex justify-between items-center w-full bg-[#363636] h-[49px]  rounded w-full">
                     <input
-                      className="h-[49px] bg-[#363636]"
+                      className="h-[49px] bg-[#363636] w-full border-none"
                       type="password"
                       name="password"
                     />
-                    <i className="relative ">
+                    <i className="relative mr-3 ">
                       <img src={eyes} alt="eyes" />
                     </i>
                   </div>

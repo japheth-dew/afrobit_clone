@@ -17,10 +17,10 @@ const Header = () => {
   };
 
   return (
-    <div className="bg-[#211F20] px-[4rem] py-[1rem] flex items-center gap-14 text-white sticky top-0 w-full justify-between  ">
+    <div className="bg-[#211F20] px-[4rem] py-[1rem] flex items-center  text-white sticky top-0 w-full justify-between h-[6rem]">
       {/* ----------logo-------------- */}
       <div>
-        <img className="md:w-[6rem] w-[4rem] w-[10%]" src={logo} alt="logo" />
+        <img className="min-w-[3rem] " src={logo} alt="logo" />
       </div>
       {/* ----------Navigation-------------- */}
       <div className=" md:inline hidden ">
@@ -32,7 +32,9 @@ const Header = () => {
         </div>
       )}
       {/* ----------Navigation-------------- */}
-      <LoginRegister />
+      <div className="md:inline hidden">
+        <LoginRegister />
+      </div>
       {/* ----------Login Signup-------------- */}
 
       <div className="text-[1.5rem] md:hidden inline">
