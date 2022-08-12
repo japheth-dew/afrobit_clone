@@ -181,7 +181,7 @@ const SwapHistory = () => {
 const ReconfirmOrder = (props) => {
   
   return (
-    <div className="m-auto items-center bg-[#222222] md:w-[60%] w-[90%] p-10 mt-[7rem] ">
+    <div className="m-auto items-center bg-[#222222] md:w-[60%] w-[90%] p-10 my-[20rem] ">
       <div className="flex flex-col gap-[2rem]">
         <div className="flex items-center justify-between">
           <span className="font-[700] text-[32px]">Reconfirm Order</span>
@@ -247,7 +247,7 @@ const Swap = () => {
   return (
     <div className="text-white">
       {modal && (
-        <div className="absolute w-full h-screen top-0 left-0 b backdrop-filter backdrop-blur-[3px] ">
+        <div className="absolute w-full  top-0 left-0 b backdrop-filter backdrop-blur-[3px] ">
           <ReconfirmOrder closeModal={closeModal} openModal={openModal} />
         </div>
       )}

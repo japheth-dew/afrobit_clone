@@ -17,7 +17,7 @@ const Header = () => {
   };
 
   return (
-    <div className="bg-[#211F20] px-[4rem] py-[1rem] flex items-center  text-white sticky top-0 w-full justify-between h-[6rem]">
+    <div className="bg-[#211F20] px-[4rem] py-[1rem] flex items-center  text-white sticky top-0 w-full justify-between h-[6rem] z-[9999] ">
       {/* ----------logo-------------- */}
       <div>
         <img className="min-w-[3rem] " src={logo} alt="logo" />
@@ -27,7 +27,7 @@ const Header = () => {
         <Nav />
       </div>
       {open && (
-        <div className=" md:hidden absolute z-[999] bg-[#211F20] w-full left-0 top-[85px] ">
+        <div className=" md:hidden absolute z-[9999] bg-[#211F20] w-full left-0 top-[85px] ">
           <Nav2 />
         </div>
       )}
