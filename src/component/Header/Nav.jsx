@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import swap from "../../assets/svgs/swap.svg";
 import spot from "../../assets/svgs/spot.svg";
 import margin from "../../assets/svgs/margin.svg";
-import traditional from "../../assets/svgs/traditional.svg";
+// import traditional from "../../assets/svgs/traditional.svg";
 
 const Nav = () => {
   const [active, setActive] = useState("trade");
@@ -76,7 +76,7 @@ const Nav = () => {
                 </div>
               </button>
             </NavLink>
-            <NavLink to={"trade/traditional"}>
+            {/* <NavLink to={"trade/traditional"}>
               <button
                 onClick={() => setDisplay(false)}
                 className="px-8 flex gap-4 items-center hover:bg-[#211F20] text-left w-full"
@@ -89,7 +89,7 @@ const Nav = () => {
                   </span>
                 </div>
               </button>
-            </NavLink>
+            </NavLink> */}
           </div>
         )}
       </div>
@@ -106,9 +106,9 @@ const Nav = () => {
       </NavLink>
 
       <button>Invest</button>
-      <button>Loan</button>
+      {/* <button>Loan</button>
       <button>Club</button>
-      <button>Execution</button>
+      <button>Execution</button> */}
     </div>
   );
 };

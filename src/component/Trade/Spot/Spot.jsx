@@ -1,5 +1,6 @@
 import React from "react";
 import Chart from "react-apexcharts";
+import { useTable } from "react-table";
 import exchange from "../../../assets/svgs/exchange.svg";
 import play from "../../../assets/svgs/play.svg";
 import play2 from "../../../assets/svgs/play2.svg";
@@ -11,6 +12,7 @@ import switcher from "../../../assets/svgs/switcher.svg";
 import greenDolls from "../../../assets/svgs/greenDolls.svg";
 import btc from "../../../assets/svgs/btc.svg";
 import slider from "../../../assets/svgs/slider.svg";
+import book from "../../../assets/svgs/book.svg";
 
 const Order = () => {
   return (
@@ -50,7 +52,7 @@ const Order = () => {
       <div>
         <div className="text-[#666666] text-[12px] flex  items-center w-full my-[1.5rem]">
           <p className="w-[20%]">Order price</p>
-          <div className="bg-[#363636] rounded flex gap-1 items-center w-full pl-[12px]">
+          <div className="bg-[#363636] rounded flex gap-1 items-center w-full pl-[12px] pr-[5px]">
             <img src={greenDolls} alt="" />
             <input
               className="bg-[#363636] w-full border-none h-[4rem]"
@@ -65,16 +67,16 @@ const Order = () => {
             <div className="bg-[#363636] rounded flex gap-1 items-center w-full pl-[12px]">
               <img src={btc} alt="" />
               <input
-                className="bg-[#363636] w-full border-none h-[4rem]"
+                className="bg-[#363636] w-full border-none h-[4rem] text-[12px]"
                 type="text"
-                placeholder="Enter order price"
+                placeholder="Enter Amount"
               />
             </div>
             <img src={exchange} alt="" />
             <div className="bg-[#363636] rounded flex gap-1 items-center w-full pl-[12px]">
               <img src={greenDolls} alt="" />
               <input
-                className="bg-[#363636] w-full border-none h-[4rem]"
+                className="bg-[#363636] w-full border-none h-[4rem] text-[12px]"
                 type="text"
                 placeholder="Enter order price"
               />
@@ -516,9 +518,154 @@ const CandleStick = () => {
   );
 };
 
+const OpenOrders = () => {
+  const data = React.useMemo(
+    () => [
+      {
+        col1: "",
+        col2: "",
+        col3: "",
+        col4: "",
+        col5: "",
+        col6: "",
+        col7: "",
+        col8: "",
+        col9: "",
+        col10: "",
+      },
+    ],
+    []
+  );
+
+  const columns = React.useMemo(
+    () => [
+      {
+        Header: "Order Time",
+        accessor: "col1", // accessor is the "key" in the data
+      },
+      {
+        Header: "Trading Pair",
+        accessor: "col2",
+      },
+      {
+        Header: (
+          <div className="flex gap-1 items-center">
+            <span>Transaction Type</span>
+            <img className="max-h-[5px] w-[18px]" src={drop2} alt="" />
+          </div>
+        ),
+        accessor: "col3",
+      },
+      {
+        Header: (
+          <div className="flex gap-1 items-center">
+            <span>Direction</span>
+            <img className="max-h-[5px] w-[18px]" src={drop2} alt="" />
+          </div>
+        ),
+        accessor: "col4",
+      },
+      {
+        Header: "Order Price",
+        accessor: "col5",
+      },
+      {
+        Header: "Amount",
+        accessor: "col6",
+      },
+      {
+        Header: "Progress",
+        accessor: "col7",
+      },
+      {
+        Header: "Trigger Price",
+        accessor: "col8",
+      },
+      {
+        Header: "Order status",
+        accessor: "col9",
+      },
+      {
+        Header: <span className="font-[500] text-[#FAC55B]">Cancel All</span>,
+        accessor: "col10",
+      },
+    ],
+    []
+  );
+
+  const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
+    useTable({ columns, data });
+
+  return (
+    <div className="text-[#7C7C7C] flex flex-col gap-8">
+      <div className="flex items-center justify-between px-[10px]">
+        <div className="font-[500] text-[20px] flex gap-[25px] items-center">
+          <div className="flex flex-col gap-[.5px] items-center font-[700] ">
+            <span className="text-[#FAC55B] ">Open Orders(0)</span>
+            <span className="border-b-[3px]  border-[#FAC55B] w-[60px]"></span>
+          </div>
+          <span>Orders</span>
+          <span>Transaction Records</span>
+        </div>
+        <div className="flex gap-2 items-center">
+          <span className="text-[15px]">Hide other trading pairs</span>
+          <input
+            className="bg-[#454545] text-black focus:black border-[#EDD78F] mt-1"
+            type="checkbox"
+          />
+        </div>
+      </div>
+
+      <div className="flex flex-col md:text-[12px] text-[10px] text-black md:h-screen  md:overflow-auto overflow-y-scroll ">
+        <table {...getTableProps()} className="w-full ">
+          <thead>
+            {headerGroups.map((headerGroup) => (
+              <tr {...headerGroup.getHeaderGroupProps()} className="p-5 ">
+                {headerGroup.headers.map((column) => (
+                  <th
+                    {...column.getHeaderProps()}
+                    className="text-left text-[#666666] bg-[#242424] md:p-5 md:px-8 p-2 px-2 "
+                  >
+                    {column.render("Header")}
+                  </th>
+                ))}
+              </tr>
+            ))}
+          </thead>
+          <tbody {...getTableBodyProps()}>
+            {rows.map((row) => {
+              prepareRow(row);
+              return (
+                <tr {...row.getRowProps()}>
+                  {row.cells.map((cell) => {
+                    return (
+                      <td
+                        {...cell.getCellProps()}
+                        className="md:p-5 md:px-8 p-2 px-2  text-white"
+                      >
+                        {cell.render("Cell")}
+                      </td>
+                    );
+                  })}
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+      </div>
+
+      <div className="flex flex-col m-auto">
+        <div>
+          <img src={book} alt="" />
+          <span>No data</span>
+        </div>
+      </div>
+    </div>
+  );
+};
 const Spot = () => {
   return (
-    <div>
+    <div className="">
       <div className="bg-[#211F20] md:p-[4rem] p-[1rem] md:flex-row flex-col flex md:gap-8 gap-4">
         <div className="border-r border-[#3C3C3C] md:w-[65%] w-[100%]">
           <div className="border-b border-[#3C3C3C] pb-[1rem] mb-[2rem]">
@@ -535,6 +682,9 @@ const Spot = () => {
         <div className="md:w-[35%] w-[100%]">
           <Order />
         </div>
+      </div>
+      <div className="bg-[#161616] md:p-[4rem] p-[1rem]">
+        <OpenOrders />
       </div>
     </div>
   );
