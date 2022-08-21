@@ -22,7 +22,7 @@ const Nav = () => {
             setDisplay(true);
           }}
           onMouseLeave={() => {
-            setTimeout(()=>setDisplay(false), 1000);
+            setTimeout(()=>setDisplay(false), 2000);
           }}
         >
           <div className="flex flex-col gap-[1px] items-center">

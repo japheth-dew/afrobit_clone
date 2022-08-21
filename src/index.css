@@ -11,10 +11,10 @@ table {
 }
 
 th:first-child{
-  border-radius: 5px;
+  border-radius: 5px 0 0 5px;
 }
 th:last-child{
-  border-radius: 5px;
+  border-radius: 0 5px 5px 0;
 }
 
 html, body{
