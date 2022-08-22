@@ -19,6 +19,9 @@ import phone from "../../assets/svgs/phone.svg";
 import password from "../../assets/svgs/password.svg";
 import goldgoogle from "../../assets/svgs/goldgoogle.svg";
 import goldSheild from "../../assets/svgs/goldSheild.svg";
+import note from "../../assets/svgs/note.svg";
+import identityVerification from "../../assets/svgs/identityVerification.svg";
+import verifyAddress from "../../assets/svgs/verifyAddress.svg";
 
 const Top = () => {
   return (
@@ -216,8 +219,34 @@ const AccountSettings = () => {
 const IdentityVerification = () => {
   return (
     <div>
-      <div>
-        <img src={goldSheild} alt="" />
+      <div className="flex flex-col items-center gap-5">
+        <div>
+          <img src={goldSheild} alt="" />
+        </div>
+        <div className="text-[20px] text-center">
+          <p className="text-[#EDD78F] font-[600]">Verification successful!</p>
+          <p className="text-[#707070] font-[400]">
+            Your identity information has been verified
+          </p>
+        </div>
+        <div className="w-[30rem] rounded-md bg-[#F1D27F33] flex flex-col items-center py-[2rem]">
+          <div>
+            <div className=" flex flex-col gap-5   p-5 w-full">
+              <div className="flex gap-5 items-center">
+                <img src={note} alt="" />
+                <p className="text-[#FAC55B]">Identity information</p>
+              </div>
+              <div className="flex gap-5 items-center">
+                <img src={identityVerification} alt="" />
+                <p className="text-[#FAC55B]">Verify identity</p>
+              </div>
+              <div className="flex gap-5 items-center">
+                <img src={verifyAddress} alt="" />
+                <p className="text-[#FAC55B]">Verify Address</p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
@@ -238,6 +267,7 @@ const Refferal = () => {
     </div>
   );
 };
+
 const Coupon = () => {
   return (
     <div>
@@ -245,6 +275,7 @@ const Coupon = () => {
     </div>
   );
 };
+
 const SettingsDisplayarea = (props) => {
   return (
     <div className="px-[3rem] py-[4rem] w-[75%] border-l">
