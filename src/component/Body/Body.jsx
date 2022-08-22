@@ -3,12 +3,14 @@ import { Routes, Route } from "react-router-dom";
 import Earn from '../Earn/Earn';
 import Login from '../Login/Login';
 import Register from '../Register/Register';
+import Settings from '../Settings/Settings';
 import Trade from '../Trade/Trade';
 
 const Body = () => {
   return (
     <div className="bg-[#363636]  h-auto">
       <Routes>
+        <Route path="/" element={<Settings />} />
         <Route path="login" element={<Login />} />
         <Route path="register" element={<Register />} />
         <Route path="earn" element={<Earn />} />
