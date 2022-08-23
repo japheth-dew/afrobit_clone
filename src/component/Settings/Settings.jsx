@@ -22,6 +22,13 @@ import goldSheild from "../../assets/svgs/goldSheild.svg";
 import note from "../../assets/svgs/note.svg";
 import identityVerification from "../../assets/svgs/identityVerification.svg";
 import verifyAddress from "../../assets/svgs/verifyAddress.svg";
+import usddrop from "../../assets/svgs/usddrop.svg";
+import timeZone from "../../assets/svgs/timeZone.svg";
+import leverage from "../../assets/svgs/leverage.svg";
+import usd from "../../assets/svgs/usd.svg";
+import switcher from "../../assets/svgs/switcher.svg";
+import drop from "../../assets/svgs/drop.svg";
+import nextGold from "../../assets/svgs/nextGold.svg";
 
 const Top = () => {
   return (
@@ -58,7 +65,7 @@ const SettingsNavButton = ({
   setSettingState,
   settingState,
   setComponent,
-  component
+  component,
 }) => {
   const [active, setActive] = useState();
 
@@ -136,8 +143,8 @@ const SettingsNav = ({ settingState, setSettingState, setComponent }) => {
           setComponent={setComponent}
           setSettingState={setSettingState}
           component={<Coupon />}
-          image_1={coupon}
-          image_2={coupon2}
+          image_1={coupon2}
+          image_2={coupon}
         />
       </div>
     </div>
@@ -252,10 +259,184 @@ const IdentityVerification = () => {
   );
 };
 
+const TradeSetting = (props) => {
+  return (
+    <div className="flex items-center justify-between my-[1rem]">
+      <div>
+        <p className="text-[18px] font-[600]">{props.head}</p>
+        <p className="text-[14px] ">{props.tagline}</p>
+      </div>
+      <img src={props.image} alt="" />
+    </div>
+  );
+};
 const GlobalSettings = () => {
   return (
     <div>
-      <div>global settings</div>
+      <div className="flex items-center justify-between">
+        <div>
+          <p className="text-[18px] font-[600]">Default Currency</p>
+          <p className="text-[14px] ">
+            When enabled, your asset valuation and returns will be displayed in
+            the default currency.
+          </p>
+        </div>
+        <img src={usddrop} alt="" />
+      </div>
+      <div className="mt-[1.5rem]">
+        <p className="text-[30px] font-[500]">Trade Settings</p>
+
+        <TradeSetting
+          head="Settlement Time Zone"
+          tagline="Set up settlement time zone of Position and Funding fee."
+          image={timeZone}
+        />
+        <TradeSetting head="Trading Leverage" image={leverage} />
+        <TradeSetting
+          head="Default Currency "
+          tagline="Your assets, total margin, and line of credit will be displayed in the default currency."
+          image={usd}
+        />
+        <TradeSetting
+          head="Auto Convert "
+          tagline={
+            <span>
+              When enabled, unrealized P&L in your position will be displayed in
+              default currency, and realized <br />
+              P&L will be converted into the default currency for settlement.
+            </span>
+          }
+          image={switcher}
+        />
+        <TradeSetting
+          head="Double-click Order "
+          tagline={
+            <span>
+              When enabled, a double click on the buy or sell price will
+              immediately place a Market Order with the <br />
+              default order amount.
+            </span>
+          }
+          image={switcher}
+        />
+        <TradeSetting
+          head="Collateralize Earn Assets"
+          tagline={
+            <span>
+              When enabled, Fixed Earn assets are used as collateral for Margin
+              trading. When enabled, "Settle <br />
+              Earn assets" will also be enabled.
+            </span>
+          }
+          image={switcher}
+        />
+        <TradeSetting
+          head="Settle Earn Assets"
+          tagline={
+            <span>
+              When enabled, if the Available Balance in your Wallet is
+              insufficient for liquidation, your Fixed Earn <br />
+              assets will be liquidated.
+            </span>
+          }
+          image={switcher}
+        />
+        <TradeSetting
+          head="Negative Balance Protection"
+          tagline={
+            <span>
+              When enabled, if there are negative balances in your assets due to
+              settlements, the assets with
+              <br /> positive balances will cover the negative balance according
+              to the settlement rules.
+            </span>
+          }
+          image={switcher}
+        />
+        <TradeSetting
+          head="Auto Settle"
+          tagline={
+            <span>
+              When enabled, all your open positions will be automatically
+              settled before the settlement time <br />
+              (04:00).
+            </span>
+          }
+          image={switcher}
+        />
+        <TradeSetting
+          head="Email Notifications"
+          tagline={
+            <span>
+              Turn off to stop receiving Spot/Margin trading email notifications
+              (risk notices and funding fee <br /> settlements will not be
+              affected).
+            </span>
+          }
+          image={switcher}
+        />
+        <TradeSetting
+          head="Reconfirm Order"
+          tagline={
+            <span>
+              When enabled, you will be asked to reconfirm when you place a
+              Spot/Margin order.
+            </span>
+          }
+          image={switcher}
+        />
+        <TradeSetting
+          head="Portfolio Stop-loss"
+          tagline={
+            <span>
+              Set the maximum unrealized loss allowed for all positions. When
+              unrealized loss reaches the stop-
+              <br />
+              loss level, all positions will be closed and settled in the
+              default currency.
+            </span>
+          }
+          image={switcher}
+        />
+        <TradeSetting
+          head="Portfolio Take-profit"
+          tagline={
+            <span>
+              Set the maximum unrealized profit allowed for all positions. When
+              profits reach the take-profit level, all positions will be closed
+              and settled in the default currency.
+            </span>
+          }
+          image={switcher}
+        />
+      </div>
+      <div className="mt-[1.5rem]">
+        <p className="text-[30px] font-[500]">Loan Settings</p>
+
+        <TradeSetting
+          head="Auto Margin Top-up"
+          tagline={
+            <span>
+              When LTV ≥ Margin LTV, your Available Balance in the Wallet will
+              be used for collateral top-up to <br />
+              avoid liquidation. You can choose from different top-up plans.
+            </span>
+          }
+          image={timeZone}
+        />
+
+        <TradeSetting
+          head="Auto Redeem Excess Collateral"
+          tagline={
+            <span>
+              When LTV Excess collateral redeemable level and available
+              redemption amount is above 1,000 <br />
+              USD, your collateral will be redeemed automatically.
+            </span>
+          }
+          image={switcher}
+        />
+      </div>
     </div>
   );
 };
@@ -271,7 +452,88 @@ const Refferal = () => {
 const Coupon = () => {
   return (
     <div>
-      <div>Coupon</div>
+      <div className="flex flex-col gap-4">
+        <div className="md:flex-row flex-col flex items-center gap-3 ">
+          <div className=" flex gap-2 items-center bg-[#363636] rounded  px-2">
+            <input
+              className="bg-[#363636] border-none "
+              type="text"
+              placeholder="Type"
+            />
+            <img src={drop} alt="" />
+          </div>
+          <div className=" flex gap-2 items-center bg-[#363636] rounded  px-2">
+            <input
+              className="bg-[#363636] border-none "
+              type="text"
+              placeholder="Effective"
+            />
+            <img src={drop} alt="" />
+          </div>
+          <div className=" flex gap-2 items-center bg-[#363636] rounded px-2 ">
+            <input
+              className="bg-[#363636] border-none "
+              type="text"
+              placeholder="Order By"
+            />
+            <img src={drop} alt="" />
+          </div>
+        </div>
+        <span>
+          Enjoy exclusive WhaleFin Earn rewards;
+          <span className="text-[#EDD78F] font-[500]">
+            {" "}
+            Learn how to redeem
+          </span>
+        </span>
+        <div className="flex gap-4 w-full ">
+          <div className="bg-[#2F2F2F]    rounded-md  flex ">
+            <div className="rounded-md bg-[#f3cd71] flex  items-center  ">
+              <span className="text-[20px] w-[180px] font-[500] text-center w-full text-black">
+                100 <br />
+                USDⓢ
+              </span>
+            </div>
+            <div className=" flex gap-[2rem] items-center ">
+              <div className="ml-[10px]">
+                <p className="text-[18px]">VIP Cash Coupon</p>
+                <p className="text-[12px]">Valid until 08/15/2022</p>
+              </div>
+              <div className="flex flex-col gap-[4rem] items-end w-full p-3">
+                <button className="text-[#02C8A8] bg-[#02C8A81A] w-[72px] h-[27px] rounded ">
+                  Use
+                </button>
+                <div className="flex items-center gap-1">
+                  <span>Coupon Rules </span>
+                  <img src={nextGold} alt="" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="bg-[#2F2F2F]   rounded-md  flex ">
+            <div className="rounded-md bg-[#b8b8b8] flex  items-center  ">
+              <span className="text-[20px] font-[500] w-[180px] text-center w-full text-black">
+                200%
+              </span>
+            </div>
+            <div className=" flex gap-[2rem] items-center ">
+              <div className="ml-[10px]">
+                <p className="text-[18px]">VIP Exclusive Coupon</p>
+                <p className="text-[12px]">Valid until 08/15/2022</p>
+              </div>
+              <div className="flex flex-col gap-[4rem] items-end w-full p-3">
+                <button className="text-[#02C8A8] bg-[#02C8A81A] w-[72px] h-[27px] rounded ">
+                  Use
+                </button>
+                <div className="flex items-center gap-1">
+                  <span>Coupon Rules </span>
+                  <img src={nextGold} alt="" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
@@ -294,7 +556,7 @@ const Middle = () => {
   const [component, setComponent] = useState(<AccountSettings />);
 
   return (
-    <div className="bg-[#211F20] flex items-center">
+    <div className="bg-[#211F20] flex items-start">
       <SettingsNav
         settingState={settingState}
         setSettingState={setSettingState}
