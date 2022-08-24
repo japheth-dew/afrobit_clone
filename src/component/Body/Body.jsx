@@ -1,6 +1,7 @@
 import React from 'react'
 import { Routes, Route } from "react-router-dom";
 import Earn from '../Earn/Earn';
+import Invest from '../Invest/Invest';
 import Login from '../Login/Login';
 import Refferal from '../Refferal/Refferal';
 import Register from '../Register/Register';
@@ -16,6 +17,7 @@ const Body = () => {
         <Route path="login" element={<Login />} />
         <Route path="register" element={<Register />} />
         <Route path="earn" element={<Earn />} />
+        <Route path="invest" element={<Invest />} />
         <Route path="trade/*" element={<Trade />} />
       </Routes>
     </div>

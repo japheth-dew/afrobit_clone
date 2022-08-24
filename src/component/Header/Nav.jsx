@@ -12,18 +12,17 @@ const Nav = () => {
   const handleEarn = () => {
     setActive("earn");
   };
+ 
 
   return (
     <div className="flex md:gap-10 gap-3 font-[400] md:text-[18px] text-[14px] items-center">
       <div>
         <button
-          onMouseOver={() => {
+          onClick={() => {
             setActive("trade");
             setDisplay(true);
           }}
-          onMouseLeave={() => {
-            setTimeout(()=>setDisplay(false), 2000);
-          }}
+        
         >
           <div className="flex flex-col gap-[1px] items-center">
             <span>Trade</span>
@@ -105,10 +104,18 @@ const Nav = () => {
         </button>
       </NavLink>
 
-      <button>Invest</button>
-      {/* <button>Loan</button>
-      <button>Club</button>
-      <button>Execution</button> */}
+      <NavLink to={"invest"}>
+        <button name="invest" onClick={()=> setActive("invest")}>
+          <div className="flex flex-col gap-[1px] items-center">
+            <span>Invest</span>
+            {active === "invest" && (
+              <span className="border-b-[2px]  border-[#FAC55B] w-[25px]"></span>
+            )}
+          </div>
+        </button>
+      </NavLink>
+
+     
     </div>
   );
 };

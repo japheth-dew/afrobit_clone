@@ -3,7 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import Swap from './Swap/Swap';
 import Spot from './Spot/Spot';
 import Margin from './Margin/Margin';
-import Traditional from './Traditional/Traditional';
+// import Traditional from './Traditional/Traditional';
 
 const Trade = () => {
   return (
@@ -12,7 +12,7 @@ const Trade = () => {
             <Route path={"swap"} element={<Swap/>} />
             <Route path={"spot"} element={<Spot/>} />
             <Route path={"margin"} element={<Margin/>} />
-            <Route path={"traditional"} element={<Traditional/>} />
+            {/* <Route path={"traditional"} element={<Traditional/>} /> */}
         </Routes>
     </div>
   )
