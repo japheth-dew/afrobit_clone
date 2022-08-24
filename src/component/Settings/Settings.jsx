@@ -449,13 +449,6 @@ const GlobalSettings = () => {
   );
 };
 
-const Refferal = () => {
-  return (
-    <div>
-      <div>reffereall</div>
-    </div>
-  );
-};
 
 const Coupon = () => {
   return (
