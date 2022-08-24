@@ -1,5 +1,6 @@
 import React from 'react'
 import { Routes, Route } from "react-router-dom";
+import Assets from '../Assets/Assets';
 import Earn from '../Earn/Earn';
 import Invest from '../Invest/Invest';
 import Login from '../Login/Login';
@@ -18,6 +19,7 @@ const Body = () => {
         <Route path="register" element={<Register />} />
         <Route path="earn" element={<Earn />} />
         <Route path="invest" element={<Invest />} />
+        <Route path="assets" element={<Assets />} />
         <Route path="trade/*" element={<Trade />} />
       </Routes>
     </div>

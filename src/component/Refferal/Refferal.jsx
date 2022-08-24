@@ -228,8 +228,7 @@ const Commision = () => {
     []
   );
 
-  const { getTableProps, headerGroups } =
-    useTable({ columns, data });
+  const { getTableProps, headerGroups } = useTable({ columns, data });
 
   return (
     <div className="md:p-[4rem] p-[1rem] text-white">
