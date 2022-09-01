@@ -28,7 +28,7 @@ const Header = () => {
       </div>
       {open && (
         <div className=" md:hidden absolute z-[9999] bg-[#211F20] w-full left-0 top-[85px] ">
-          <Nav2 />
+          <Nav2  close={close} />
         </div>
       )}
       {/* ----------Navigation-------------- */}

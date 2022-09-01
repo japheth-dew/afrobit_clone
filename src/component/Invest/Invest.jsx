@@ -69,13 +69,13 @@ const Header = () => {
     <div className="bg-[#161616]  md:pl-[4rem] pl-[1rem]">
       <div className="flex justify-between items-center">
         <div className="flex flex-col gap-4">
-          <p className="text-[40px] font-[700]">Monetize Your Market</p>
+          <p className="md:text-[40px] text-[25px] font-[700]">Monetize Your Market</p>
           <div>
             <p>Invest BTC, ETH - Sell high and earn high yield.</p>
             <p>Invest USDⓢ, USDT - Buy low and earn high yield.</p>
           </div>
         </div>
-        <img src={headerImage} alt="" />
+        <img className="bg:inline hidden" src={headerImage} alt="" />
       </div>
       <div>
         <div className="flex gap-[5rem] text-[18px] mt-[2rem]">
@@ -176,7 +176,7 @@ const Bottom = ({ setModal }) => {
         col3: <span className=" ">{item.col3}</span>,
         col4: <span className=" ">{item.col4}</span>,
         col5: (
-          <div className="flex items-center justify-between">
+          <div className="md:flex-row flex-col gap-2 flex md:items-center justify-between">
             <span>{item.col5}</span>
 
             <button
@@ -195,7 +195,7 @@ const Bottom = ({ setModal }) => {
     useTable({ columns, data });
   return (
     <div className="">
-      <div className="flex flex-col gap-6 bg-[#161616] md:p-[4rem] p-[1rem] md:text-[14px] text-[12px] text-black md:h-screen  md:overflow-auto overflow-y-scroll ">
+      <div className="flex flex-col gap-6 bg-[#161616] md:p-[4rem] p-[1rem] md:text-[14px] text-[12px] text-black md:h-screen  overflow-x-scroll ">
         {/* --------------- */}
         <table {...getTableProps()} className="w-full ">
           <thead>
