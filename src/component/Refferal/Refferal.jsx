@@ -19,7 +19,7 @@ import note from "../../assets/svgs/book.svg";
 
 const Top = () => {
   return (
-    <div className="md:pl-[4rem]  bg-[#f9c55a] flex justify-between items-center ">
+    <div className="md:pl-[4rem] md:p-0 p-[1rem]  bg-[#f9c55a] flex justify-between items-center ">
       <div>
         <div>
           <p className="text-[25px] font-[500] ">
@@ -28,12 +28,12 @@ const Top = () => {
           </p>
           <p>Get special welcome offer for friends</p>
         </div>
-        <div className="flex ">
-          <img src={send} alt="" />
-          <img src={line} alt="" />
-          <img src={document} alt="" />
-          <img src={line} alt="" />
-          <img src={gift} alt="" />
+        <div className="flex w-auto justify-between">
+          <img className="w-[3rem] md:w-auto " src={send} alt="" />
+          <img className="hidden md:inline " src={line} alt="" />
+          <img className="w-[3rem] md:w-auto " src={document} alt="" />
+          <img className="hidden md:inline " src={line} alt="" />
+          <img className="w-[3rem] md:w-auto " src={gift} alt="" />
         </div>
         <div className="flex gap-8">
           <div>
@@ -55,7 +55,7 @@ const Top = () => {
           </div>
         </div>
       </div>
-      <div>
+      <div className="md:inline hidden">
         <img src={purse} alt="" />
       </div>
     </div>
@@ -64,16 +64,16 @@ const Top = () => {
 
 const Invitation = () => {
   return (
-    <div className="text-white md:px-[4rem] md:pt-[4rem] pt-[1rem] px-[1rem] flex w-full">
-      <div className="w-[70%] flex flex-col gap-[2rem]">
+    <div className="text-white md:px-[4rem] md:pt-[4rem] pt-[1rem] px-[1rem] md:flex-row flex-col flex w-full">
+      <div className="md:w-[70%] flex flex-col gap-[2rem]">
         <p className="text-[28px] font-[600]">My Invitation</p>
         <div className=" flex flex-col gap-8 bg-[#161616] p-[2rem] w-full">
           <div className=" flex w-full">
             <img src={avatarStar} alt="" />
             <div>
-              <div className="flex gap-[5rem]">
+              <div className="flex md:flex-row flex-col md:gap-[5rem] gap-4">
                 <p>whalefin.va15xphv</p>
-                <div className="flex items-center gap-2 ">
+                <div className="md:flex-row flex-col flex md:items-center gap-2 ">
                   <img src={smallGroup} alt="" />
                   <div className="flex items-center gap-1">
                     <span className="text-[14px] text-[#DFB154]">More</span>
@@ -151,7 +151,7 @@ const Invitation = () => {
 
 const Invite = () => {
   return (
-    <div className=" text-white bg-[#EDD78F40] md:px-[4rem] px-[1rem] md:py-[2rem] py-[1rem] flex justify-between items-center">
+    <div className=" text-white bg-[#EDD78F40] md:px-[4rem] px-[1rem] md:py-[2rem] py-[1rem] md:flex-row gap-4 flex-col flex justify-between items-center">
       <img src={giftbox} alt="" />
       <div className="flex flex-col gap-8">
         <div>
@@ -164,7 +164,7 @@ const Invite = () => {
         <div>
           <p>Invite link</p>
           <div className="flex gap-4 items-center">
-            <p className="text-[22px] font-[500]">
+            <p className="md:text-[22px] md:font-[500]">
               https://wfalpha-h5.ambergro..
             </p>
             <img src={copy} alt="" />
@@ -176,14 +176,14 @@ const Invite = () => {
       <div>
         <div>
           <label htmlFor="email">Invite by Email</label>
-          <div className="text-[14px] flex gap-5">
+          <div className="text-[14px] flex md:flex-row flex-col gap-2">
             <input
               className="w-[300px]"
               type="email"
               name="email"
               placeholder="Please enter friend's email"
             />
-            <button className="text-black rounded bg-[#fbc252] px-[1rem] font-[500]  ">
+            <button className="text-black md:h-auto h-[3rem] rounded bg-[#fbc252] px-[1rem] font-[500]  ">
               Invite Now
             </button>
           </div>
@@ -231,7 +231,7 @@ const Commision = () => {
   const { getTableProps, headerGroups } = useTable({ columns, data });
 
   return (
-    <div className="md:p-[4rem] p-[1rem] text-white">
+    <div className="md:p-[4rem] p-[1rem] text-white overflow-x-scroll">
       <p className="text-[22px] font-[600] mb-[2rem]">My Commissions</p>
 
       <div className="flex gap-4 mb-[2rem]">
