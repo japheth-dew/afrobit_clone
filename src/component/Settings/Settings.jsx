@@ -252,9 +252,9 @@ const IdentityVerification = () => {
             Your identity information has been verified
           </p>
         </div>
-        <div className="w-[30rem] rounded-md bg-[#F1D27F33] flex flex-col items-center py-[2rem]">
+        <div className="md:w-[30rem] w-[15rem] rounded-md bg-[#F1D27F33] flex flex-col items-center py-[2rem]">
           <div>
-            <div className=" flex flex-col gap-5   p-5 w-full">
+            <div className=" flex flex-col gap-5  p-5 w-full">
               <div className="flex gap-5 items-center">
                 <img src={note} alt="" />
                 <p className="text-[#FAC55B]">Identity information</p>
@@ -277,12 +277,12 @@ const IdentityVerification = () => {
 
 const TradeSetting = (props) => {
   return (
-    <div className="flex items-center justify-between my-[1rem]">
+    <div className="md:flex gap-3 md:items-center justify-between my-[1rem] ">
       <div>
         <p className="text-[18px] font-[600]">{props.head}</p>
         <p className="text-[14px] ">{props.tagline}</p>
       </div>
-      <img src={props.image} alt="" />
+      <img className="" src={props.image} alt="" />
     </div>
   );
 };
@@ -496,13 +496,15 @@ const Coupon = () => {
             Learn how to redeem
           </span>
         </span>
-        <div className="flex gap-4 w-full ">
-          <div className="bg-[#2F2F2F]    rounded-md  flex ">
-            <div className="rounded-md bg-[#f3cd71] flex  items-center  ">
-              <span className="text-[20px] w-[180px] font-[500] text-center w-full text-black">
-                100 <br />
-                USDⓢ
-              </span>
+        <div className="md:flex-row flex-col flex gap-4 w-full ">
+          <div className="bg-[#2F2F2F] rounded-md md:gap-4 gap-0 md:flex-row flex-col flex  ">
+            <div className="rounded-md bg-[#f3cd71] flex   ">
+              <div className="text-[20px] w-[180px] md:h-auto  font-[500] text-center w-full text-black">
+                <span className="">
+                  100 <br />
+                  USDⓢ
+                </span>
+              </div>
             </div>
             <div className=" flex gap-[2rem] items-center ">
               <div className="ml-[10px]">
@@ -520,7 +522,8 @@ const Coupon = () => {
               </div>
             </div>
           </div>
-          <div className="bg-[#2F2F2F]   rounded-md  flex ">
+
+          <div className="bg-[#2F2F2F] rounded-md  md:flex-row flex-col flex gap-4 w-full  ">
             <div className="rounded-md bg-[#b8b8b8] flex  items-center  ">
               <span className="text-[20px] font-[500] w-[180px] text-center w-full text-black">
                 200%
