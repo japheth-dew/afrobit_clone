@@ -33,13 +33,13 @@ import nextGold from "../../assets/svgs/nextGold.svg";
 
 const Top = () => {
   return (
-    <div className="bg-[#161616] md:px-[7rem] md:pt-[4rem] p-[1rem] text-white flex justify-between overflow-hidden">
-      <div className="flex gap-5">
+    <div className="bg-[#161616] md:px-[7rem] md:pt-[4rem] p-[1rem] text-white md:flex-row flex-col flex justify-between overflow-hidden">
+      <div className="flex gap-5 ">
         <div className="bg-[#DFB154] h-[5rem] w-[5rem] rounded">
           <img src={profile} alt="" />
         </div>
         <div>
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2 px-">
             <p className="font-[600] text-[32px] ">whalefin.va15xphv</p>
             <img className="w-[18px]" src={write} alt="" />
           </div>
@@ -49,7 +49,7 @@ const Top = () => {
           </div>
         </div>
       </div>
-      <div className="w-[40%] relative -bottom-[2rem] bg-gradient-to-r from-[#32312D] to-[#504E4A] flex flex-col gap-4 items-center rounded-md p-10 pb-12">
+      <div className="md:w-[40%] relative -bottom-[2rem] bg-gradient-to-r from-[#32312D] to-[#504E4A] flex flex-col gap-4 items-center rounded-md p-10 pb-12">
         <img className="w-[5rem]" src={yellowCard} alt="" />
         <p className="font-[700]">AFROBIT CLUB</p>
         Join now to enjoy exclusive benefits
@@ -90,17 +90,17 @@ const SettingsNavButton = ({
   return (
     <button
       onClick={handleClick}
-      className={`${active && "text-white"} flex items-center gap-3`}
+      className={`${active && "text-white"} flex items-center gap-3 `}
     >
       <img className="w-[2rem]" src={active ? image_2 : image_1} alt={name} />
-      <p>{name}</p>
+      <p className="md:inline hidden">{name}</p>
     </button>
   );
 };
 
 const SettingsNav = ({ settingState, setSettingState, setComponent }) => {
   return (
-    <div className="flex px-[3rem] py-[4rem]  ">
+    <div className="flex md:px-[3rem] px-[1rem] py-[4rem]   ">
       <div className="text-[#A7A7A7] font-[500] flex flex-col gap-[2rem] ">
         <SettingsNavButton
           setSettingState={setSettingState}
@@ -142,7 +142,7 @@ const SettingsNav = ({ settingState, setSettingState, setComponent }) => {
         <NavLink to={"refferal"}>
         <button className={`flex items-center gap-3`}>
           <img className="w-[2rem]" src={reffer} alt="Refferal" />
-          <p>Refferal</p>
+          <p className="md:inline hidden">Refferal</p>
         </button>
         </NavLink>
         <SettingsNavButton
@@ -165,65 +165,73 @@ const AccountSettings = () => {
   return (
     <div className="flex flex-col gap-6">
       <div className="flex items-center justify-between w-full">
-        <div className="flex gap-6">
-          <img className="w-[2rem]" src={lock} alt="" />
+        <div className="flex md:gap-6 gap-4">
+          <img className="md:w-[2rem] w-[1.3rem]" src={lock} alt="" />
           <div>
-            <p className="text-[22px] ">Security Settings</p>
-            <p>
-              Security Level: <span className="text-[#FF618A]">Low</span>
+            <p className="md:text-[22px] text-[18px] ">Security Settings</p>
+            <p className="md:text-[16px] text-[14px]">
+              Security Level: <span className="text-[#FF618A]   ">Low</span>
             </p>
           </div>
         </div>
-        <img src={bars} alt="" />
+        <img className="md:inline hidden" src={bars} alt="" />
       </div>
-      <div className="flex items-center justify-between w-full">
-        <div className="flex gap-6">
-          <img className="w-[2rem]" src={email} alt="" />
+
+      <div className="md:flex-row flex-col flex md:items-center justify-between w-full">
+        <div className="flex md:gap-6 gap-4">
+          <img className="md:w-[2rem] w-[1.3rem]" src={email} alt="" />
           <div>
-            <p className="text-[22px] ">Email</p>
-            <p>Use your email address to log in or retrieve password.</p>
+            <p className="md:text-[22px] text-[18px] ">Email</p>
+            <p className="md:text-[16px] text-[14px]">
+              Use your email address to log in or retrieve password.
+            </p>
           </div>
         </div>
         <p>ja**ng@outlook.com</p>
       </div>
-      <div className="flex items-center justify-between w-full">
-        <div className="flex gap-6">
-          <img className="w-[2rem]" src={phone} alt="" />
+
+      <div className="md:flex-row flex-col gap-4 flex md:items-center justify-between w-full">
+        <div className="flex md:gap-6 gap-4">
+          <img className="md:w-[2rem] w-[1.3rem]" src={phone} alt="" />
           <div>
-            <p className="text-[22px] ">Phone</p>
-            <p>
+            <p className="md:text-[22px] text-[18px]">Phone</p>
+            <p className="md:text-[16px] text-[14px]">
               Use your mobile phone number to log in or retrieve your password.
             </p>
           </div>
         </div>
-        <button className="rounded-full w-[9rem] py-2  text-[#EDD78F] border border-[#EDD78F]">
+        <button className="rounded-md w-[9rem] py-2  text-[#EDD78F] border border-[#EDD78F]">
           Bind
         </button>
       </div>
-      <div className="flex items-center justify-between w-full">
-        <div className="flex gap-6">
-          <img className="w-[2rem]" src={password} alt="" />
+
+      <div className="md:flex-row flex-col flex gap-4 md:items-center justify-between w-full">
+        <div className="flex md:gap-6 gap-4">
+          <img className="md:w-[2rem] w-[1.3rem]" src={password} alt="" />
           <div>
-            <p className="text-[22px] ">Password</p>
-            <p>Please safeguard your password.</p>
+            <p className="md:text-[22px] text-[18px] ">Password</p>
+            <p className="md:text-[16px] text-[14px]">
+              Please safeguard your password.
+            </p>
           </div>
         </div>
-        <button className="rounded-full w-[9rem] py-2  text-[#EDD78F] border border-[#EDD78F]">
+        <button className="rounded-md w-[9rem] py-2  text-[#EDD78F] border border-[#EDD78F]">
           Reset
         </button>
       </div>
-      <div className="flex items-center justify-between w-full">
-        <div className="flex gap-6">
-          <img className="w-[2rem]" src={goldgoogle} alt="" />
+
+      <div className="md:flex-row flex-col flex gap-4 md:items-center justify-between w-full">
+        <div className="flex md:gap-6 gap-4">
+          <img className="md:w-[2rem] w-[1.3rem]" src={goldgoogle} alt="" />
           <div>
-            <p className="text-[22px] ">Google Authenticator</p>
-            <p>
+            <p className="md:text-[22px] text-[18px]">Google Authenticator</p>
+            <p className="md:text-[16px] text-[14px]">
               Google Authenticator will be used for login, transfers and
               modification of security settings.
             </p>
           </div>
         </div>
-        <button className="rounded-full w-[9rem] py-2  text-[#EDD78F] border border-[#EDD78F]">
+        <button className="rounded-md w-[9rem] py-2  text-[#EDD78F] border border-[#EDD78F]">
           Enable
         </button>
       </div>
@@ -418,6 +426,7 @@ const GlobalSettings = () => {
           image={switcher}
         />
       </div>
+
       <div className="mt-[1.5rem]">
         <p className="text-[30px] font-[500]">Loan Settings</p>
 
@@ -541,9 +550,9 @@ const Coupon = () => {
 
 const SettingsDisplayarea = (props) => {
   return (
-    <div className="px-[3rem] py-[4rem] w-[75%] border-l">
+    <div className="md:px-[3rem] px-[1rem] md:py-[4rem] py-[1rem] w-[75%] border-l">
       <div className="text-white flex flex-col gap-5">
-        <p className="font-[400] text-[32px] font-[400]">
+        <p className="font-[400] md:text-[32px] text-[20px] font-[400]">
           {props.settingState}{" "}
         </p>
         {props.component}
