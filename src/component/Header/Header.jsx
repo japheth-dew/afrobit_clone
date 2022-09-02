@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import logo from "../../assets/svgs/logo.svg";
+import CYPHERBT from "../../assets/images/CYPHERBT.png";
 import LoginRegister from "./LoginRegister";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { AiOutlineClose } from "react-icons/ai";
@@ -20,7 +21,7 @@ const Header = () => {
     <div className="bg-[#211F20] px-[4rem] py-[1rem] flex items-center  text-white sticky top-0 w-full justify-between h-[6rem] z-[9999] ">
       {/* ----------logo-------------- */}
       <div>
-        <img className="min-w-[3rem] " src={logo} alt="logo" />
+        <img className="min-w-[10rem] w-[3rem] " src={CYPHERBT} alt="logo" />
       </div>
       {/* ----------Navigation-------------- */}
       <div className=" md:inline hidden ">
@@ -28,7 +29,7 @@ const Header = () => {
       </div>
       {open && (
         <div className=" md:hidden absolute z-[9999] bg-[#211F20] w-full left-0 top-[85px] ">
-          <Nav2  close={close} />
+          <Nav2 close={close} />
         </div>
       )}
       {/* ----------Navigation-------------- */}
