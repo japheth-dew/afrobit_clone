@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import logo from "../../assets/svgs/logo.svg";
 import CYPHERBT from "../../assets/images/CYPHERBT.png";
 import LoginRegister from "./LoginRegister";
 import { GiHamburgerMenu } from "react-icons/gi";
